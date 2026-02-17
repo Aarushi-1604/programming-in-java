@@ -36,6 +36,8 @@ class Vehicle {
         return mileage;
     }
 
+    double getEngineCapacity(){ return engineCapacity;}
+
     // Setter-like method to update mileage after trip
     void addTripDistance(double distance) {
         mileage = mileage + distance;
@@ -102,13 +104,25 @@ class VehicleApp {
                     if (count == 0) {
                         System.out.println("No vehicles available.");
                     } else {
+
+                        System.out.println("\n---------------------------------------------------------------------------------");
+                        System.out.printf("%-5s %-15s %-15s %-8s %-12s %-15s\n",
+                                "No", "Brand", "Model", "Year", "Mileage", "Engine CC");
+                        System.out.println("---------------------------------------------------------------------------------");
+
                         for (int i = 0; i < count; i++) {
-                            System.out.println("\nVehicle " + (i + 1));
-                            vehicles[i].displayDetails();
+                            System.out.printf("%-5d %-15s %-15s %-8d %-12.2f %-15.2f\n",
+                                    (i + 1),
+                                    vehicles[i].getBrand(),
+                                    vehicles[i].getModel(),
+                                    vehicles[i].getYear(),
+                                    vehicles[i].getMileage(),
+                                    vehicles[i].getEngineCapacity());
                         }
+
+                        System.out.println("---------------------------------------------------------------------------------");
                     }
                     break;
-
                 case 3:
                     System.out.print("Enter vehicle number: ");
                     int num = sc.nextInt();
