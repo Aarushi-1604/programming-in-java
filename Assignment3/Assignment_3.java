@@ -13,8 +13,7 @@ class Book {
     private String title;
     private String author;
     private double price;
-    private int stockCount;
-    private String ISBN;
+    private int stockCount;    private String ISBN;
 
     // Default Constructor
     public Book() {
